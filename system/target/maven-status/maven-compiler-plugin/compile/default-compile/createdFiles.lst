@@ -1,0 +1,8 @@
+org\peanutvideo\system\domain\User.class
+org\peanutvideo\system\service\UserService.class
+org\peanutvideo\system\mapper\UserMessageMapper.class
+org\peanutvideo\system\service\impl\UserServiceImpl.class
+org\peanutvideo\system\service\impl\UserMsgServiceImpl.class
+org\peanutvideo\system\service\UserMsgService.class
+org\peanutvideo\system\domain\UserMessage.class
+org\peanutvideo\system\mapper\UserMapper.class

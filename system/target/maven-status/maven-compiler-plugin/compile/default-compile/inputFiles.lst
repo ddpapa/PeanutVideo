@@ -1,0 +1,8 @@
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\domain\User.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\mapper\UserMapper.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\service\impl\UserServiceImpl.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\service\UserMsgService.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\domain\UserMessage.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\mapper\UserMessageMapper.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\service\UserService.java
+D:\WeChatProjects\PeanutVideo-V1.0\system\src\main\java\org\peanutvideo\system\service\impl\UserMsgServiceImpl.java

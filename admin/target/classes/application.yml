@@ -1,0 +1,23 @@
+# 开发环境配置
+server:
+  port: 8090
+
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名(定义全局别名)
+  typeAliasesPackage: org.peanutvideo.system.domain
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapping/*Mapper.xml
+
+# 数据源配置
+spring:
+  datasource:
+    name: peanutVideo
+    url: jdbc:mysql://127.0.0.1/peanut_video?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    # druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
