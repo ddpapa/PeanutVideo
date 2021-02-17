@@ -1,2 +1,9 @@
-org\peanutvideo\system\mapper\UserMessageMapper.class
-org\peanutvideo\system\domain\UserMessage.class
+org\peanutvideo\plugin\UnmergeableXmlMappersPlugin.class
+org\peanutvideo\system\mapper\AppUserInfoMapper.class
+org\peanutvideo\config\SimpleCommentGenerator.class
+org\peanutvideo\system\domain\AppUserPwd.class
+org\peanutvideo\system\domain\AppUser.class
+org\peanutvideo\system\mapper\AppUserMapper.class
+org\peanutvideo\system\domain\AppUserInfo.class
+org\peanutvideo\initiator\MyBatisGeneratorInitiator.class
+org\peanutvideo\system\mapper\AppUserPwdMapper.class

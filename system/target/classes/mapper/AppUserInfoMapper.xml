@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.peanutvideo.system.mapper.AppUserInfoMapper">
+  <resultMap id="AppUserInfoResult" type="AppUserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="profile" jdbcType="VARCHAR" property="profile" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="cover_image" jdbcType="VARCHAR" property="coverImage" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+  </resultMap>
+  <sql id="selectAppUserInfo">
+    select id, user_id, profile, nickname, gender, birthday, location, description, cover_image,valid from app_user_info
+  </sql>
+
+  <select id="selectAppUserInfoById" parameterType="java.lang.Integer" resultMap="AppUserInfoResult">
+    <include refid="selectAppUserInfo" />
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAppUserInfo" parameterType="AppUserInfo" resultType="AppUserInfo">
+    <include refid="selectAppUserInfo"/>
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="userId != null and userId != ''">and user_id = #{userId}</if>
+      <if test="profile != null and profile != ''">and profile = #{profile}</if>
+      <if test="nickname != null and nickname != ''">and nickname = #{nickname}</if>
+      <if test="gender != null and gender != ''">and gender = #{gender}</if>
+      <if test="birthday != null">and birthday = #{birthday}</if>
+      <if test="location != null and location != ''">and location = #{location}</if>
+      <if test="description != null and description != ''">and description = #{description}</if>
+      <if test="coverImage != null and coverImage != ''">and cover_image = #{coverImage}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <select id="selectAppUserInfoList" parameterType="AppUserInfo" resultMap="AppUserInfoResult">
+    <include refid="selectAppUserInfo"/>
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="userId != null and userId != ''">and user_id = #{userId}</if>
+      <if test="profile != null and profile != ''">and profile = #{profile}</if>
+      <if test="nickname != null and nickname != ''">and nickname = #{nickname}</if>
+      <if test="gender != null and gender != ''">and gender = #{gender}</if>
+      <if test="birthday != null">and birthday = #{birthday}</if>
+      <if test="location != null and location != ''">and location = #{location}</if>
+      <if test="description != null and description != ''">and description = #{description}</if>
+      <if test="coverImage != null and coverImage != ''">and cover_image = #{coverImage}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <delete id="deleteAppUserInfo" parameterType="java.lang.Integer">
+    delete from app_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insertAppUserInfo" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    insert into app_user_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">id,</if>
+      <if test="userId != null and userId != ''">user_id,</if>
+      <if test="profile != null and profile != ''">profile,</if>
+      <if test="nickname != null and nickname != ''">nickname,</if>
+      <if test="gender != null and gender != ''">gender,</if>
+      <if test="birthday != null">birthday,</if>
+      <if test="location != null and location != ''">location,</if>
+      <if test="description != null and description != ''">description,</if>
+      <if test="coverImage != null and coverImage != ''">cover_image,</if>
+      <if test="valid != null and valid != ''">valid,</if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">#{id},</if>
+      <if test="userId != null and userId != ''">#{userId},</if>
+      <if test="profile != null and profile != ''">#{profile},</if>
+      <if test="nickname != null and nickname != ''">#{nickname},</if>
+      <if test="gender != null and gender != ''">#{gender},</if>
+      <if test="birthday != null">#{birthday},</if>
+      <if test="location != null and location != ''">#{location},</if>
+      <if test="description != null and description != ''">#{description},</if>
+      <if test="coverImage != null and coverImage != ''">#{coverImage},</if>
+      <if test="valid != null and valid != ''">#{valid},</if>
+    </trim>
+  </insert>
+
+  <update id="updateAppUserInfo" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    update app_user_info
+    <trim prefix="SET" suffixOverrides=",">
+      <if test="userId != null and userId != ''">user_id = #{userId},</if>
+      <if test="profile != null and profile != ''">profile = #{profile},</if>
+      <if test="nickname != null and nickname != ''">nickname = #{nickname},</if>
+      <if test="gender != null and gender != ''">gender = #{gender},</if>
+      <if test="birthday != null">birthday = #{birthday},</if>
+      <if test="location != null and location != ''">location = #{location},</if>
+      <if test="description != null and description != ''">description = #{description},</if>
+      <if test="coverImage != null and coverImage != ''">cover_image = #{coverImage},</if>
+      <if test="valid != null and valid != ''">valid = #{valid},</if>
+    </trim>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

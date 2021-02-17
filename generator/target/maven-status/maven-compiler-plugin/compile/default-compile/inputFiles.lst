@@ -1,4 +1,9 @@
-D:\WeChatProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\UserMessageMapper.java
-D:\WeChatProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\UserMapper.java
-D:\WeChatProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\User.java
-D:\WeChatProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\UserMessage.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\AppUserInfoMapper.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\plugin\UnmergeableXmlMappersPlugin.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\initiator\MyBatisGeneratorInitiator.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\AppUserPwd.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\config\SimpleCommentGenerator.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\AppUser.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\AppUserPwdMapper.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\AppUserInfo.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\AppUserMapper.java

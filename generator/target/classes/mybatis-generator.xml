@@ -4,16 +4,22 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-
     <context id="DB2Tables" targetRuntime="MyBatis3">
-        <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+        <!--覆盖生成XML文件-->
+        <plugin type="org.peanutvideo.plugin.UnmergeableXmlMappersPlugin" />
+        <!--生成中文注释-->
+        <commentGenerator type="org.peanutvideo.config.SimpleCommentGenerator">
+            <property name="suppressAllComments" value="false"/>
+            <property name="addRemarkComments" value="true"/>
+            <property name="author" value="ddpapa"/>
+            <property name="dateFormat" value="yyyy/MM/dd"/>
         </commentGenerator>
         <!--数据库连接地址密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1/peanut_video"
+                        connectionURL="jdbc:mysql://127.0.0.1/peanutvideo?useSSL=false"
                         userId="root"
                         password="123456">
+            <property name="useInformationSchema" value="true" />
         </jdbcConnection>
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
@@ -33,9 +39,13 @@
         </javaClientGenerator>
 
         <!--要生成的表格-->
-        <table tableName="user_info" domainObjectName="UserMessage" enableCountByExample="false" enableSelectByExample="false"
+        <table tableName="app_user" domainObjectName="AppUser" enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"/>
-        <table tableName="user_pwd" domainObjectName="User" enableCountByExample="false" enableSelectByExample="false"
+        <table tableName="app_user_pwd" domainObjectName="AppUserPwd" enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"/>
+        <table tableName="app_user_info" domainObjectName="AppUserInfo" enableCountByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"/>
+        <table tableName="video" domainObjectName="Video" enableCountByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"/>
     </context>
 </generatorConfiguration>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.peanutvideo.system.mapper.AppUserInfoMapper">
+  <resultMap id="BaseResultMap" type="org.peanutvideo.system.domain.AppUserInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="music_id" jdbcType="INTEGER" property="musicId" />
+    <result column="topic_id" jdbcType="INTEGER" property="topicId" />
+    <result column="discuss_id" jdbcType="INTEGER" property="discussId" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="video_url" jdbcType="VARCHAR" property="videoUrl" />
+    <result column="cover_url" jdbcType="VARCHAR" property="coverUrl" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, music_id, topic_id, discuss_id, description, video_url, cover_url, status, 
+    valid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from video
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from video
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    insert into video (id, user_id, music_id, 
+      topic_id, discuss_id, description, 
+      video_url, cover_url, status, 
+      valid)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{musicId,jdbcType=INTEGER}, 
+      #{topicId,jdbcType=INTEGER}, #{discussId,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{videoUrl,jdbcType=VARCHAR}, #{coverUrl,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, 
+      #{valid,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="musicId != null">
+        music_id,
+      </if>
+      <if test="topicId != null">
+        topic_id,
+      </if>
+      <if test="discussId != null">
+        discuss_id,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="videoUrl != null">
+        video_url,
+      </if>
+      <if test="coverUrl != null">
+        cover_url,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="valid != null">
+        valid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="musicId != null">
+        #{musicId,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null">
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="discussId != null">
+        #{discussId,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null">
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="coverUrl != null">
+        #{coverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="valid != null">
+        #{valid,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    update video
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="musicId != null">
+        music_id = #{musicId,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null">
+        topic_id = #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="discussId != null">
+        discuss_id = #{discussId,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null">
+        video_url = #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="coverUrl != null">
+        cover_url = #{coverUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="valid != null">
+        valid = #{valid,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.peanutvideo.system.domain.AppUserInfo">
+    update video
+    set user_id = #{userId,jdbcType=INTEGER},
+      music_id = #{musicId,jdbcType=INTEGER},
+      topic_id = #{topicId,jdbcType=INTEGER},
+      discuss_id = #{discussId,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      cover_url = #{coverUrl,jdbcType=VARCHAR},
+      status = #{status,jdbcType=CHAR},
+      valid = #{valid,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

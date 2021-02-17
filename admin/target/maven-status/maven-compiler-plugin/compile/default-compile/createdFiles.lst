@@ -1,2 +1,5 @@
-org\peanutvideo\controller\UserService\UserLogin.class
+org\peanutvideo\web\cofig\WebMvcConfig.class
+org\peanutvideo\web\controller\app\AppUserController.class
+org\peanutvideo\web\controller\common\PINCoding.class
+org\peanutvideo\web\swagger2\Swagger2.class
 org\peanutvideo\PeanutVideoApplication.class

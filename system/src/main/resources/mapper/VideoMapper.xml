@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.peanutvideo.system.mapper.VideoMapper">
+  <resultMap id="VideoResult" type="org.peanutvideo.system.domain.Video">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="music_id" jdbcType="INTEGER" property="musicId" />
+    <result column="topic_id" jdbcType="INTEGER" property="topicId" />
+    <result column="discuss_id" jdbcType="INTEGER" property="discussId" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="video_url" jdbcType="VARCHAR" property="videoUrl" />
+    <result column="cover_url" jdbcType="VARCHAR" property="coverUrl" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+  </resultMap>
+
+  <sql id="selectVideo">
+    select id, user_id, music_id, topic_id, discuss_id, description, video_url, cover_url, status,
+    valid from video
+  </sql>
+
+  <select id="selectVideoById" parameterType="java.lang.Integer" resultType="Video">
+    <include refid="selectVideo" />
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectVideoList" parameterType="Video" resultMap="VideoResult">
+    <include refid="selectVideo" />
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="userId != null and userId != ''">and user_id = #{userId}</if>
+      <if test="musicId != null and musicId != ''">and music_id = #{musicId}</if>
+      <if test="topicId != null and topicId != ''">and topic_id = #{topicId}</if>
+      <if test="discussId != null and discussId != ''">and discuss_id = #{discussId}</if>
+      <if test="description != null and description != ''">and description = #{description}</if>
+      <if test="videoUrl != null and videoUrl != ''">and video_url = #{videoUrl}</if>
+      <if test="coverUrl != null and coverUrl != ''">and video_url = #{coverUrl}</if>
+      <if test="status != null and status != ''">and status = #{status}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <delete id="deleteVideo" parameterType="java.lang.Integer">
+    delete from video
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insertVideo" parameterType="Video">
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">id,</if>
+      <if test="userId != null and userId != ''">user_id,</if>
+      <if test="musicId != null and musicId != ''">music_id,</if>
+      <if test="topicId != null and topicId != ''">topic_id,</if>
+      <if test="discussId != null and discussId != ''">discuss_id,</if>
+      <if test="description != null and description != ''">description,</if>
+      <if test="videoUrl != null and videoUrl != ''">video_url,</if>
+      <if test="coverUrl != null and coverUrl != ''">video_url,</if>
+      <if test="status != null and status != ''">status,</if>
+      <if test="valid != null and valid != ''">valid,</if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">#{id},</if>
+      <if test="userId != null and userId != ''">#{userId},</if>
+      <if test="musicId != null and musicId != ''">#{musicId},</if>
+      <if test="topicId != null and topicId != ''">#{topicId},</if>
+      <if test="discussId != null and discussId != ''">#{discussId},</if>
+      <if test="description != null and description != ''">#{description},</if>
+      <if test="videoUrl != null and videoUrl != ''">#{videoUrl},</if>
+      <if test="coverUrl != null and coverUrl != ''">#{coverUrl},</if>
+      <if test="status != null and status != ''">#{status},</if>
+      <if test="valid != null and valid != ''">#{valid},</if>
+    </trim>
+  </insert>
+
+  <update id="updateVideo" parameterType="Video">
+    update video
+    <trim prefix="SET" suffixOverrides=",">
+      <if test="userId != null and userId != ''">user_id = #{userId},</if>
+      <if test="musicId != null and musicId != ''">music_id = #{musicId},</if>
+      <if test="topicId != null and topicId != ''">topic_id = #{topicId},</if>
+      <if test="discussId != null and discussId != ''">discuss_id = #{discussId},</if>
+      <if test="description != null and description != ''">description = #{description},</if>
+      <if test="videoUrl != null and videoUrl != ''">video_url = #{videoUrl},</if>
+      <if test="coverUrl != null and coverUrl != ''">video_url = #{coverUrl},</if>
+      <if test="status != null and status != ''">status = #{status},</if>
+      <if test="valid != null and valid != ''">valid = #{valid},</if>
+    </trim>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

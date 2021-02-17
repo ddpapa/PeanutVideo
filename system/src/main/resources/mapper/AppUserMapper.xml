@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.peanutvideo.system.mapper.AppUserMapper">
+  <resultMap id="AppUserResult" type="AppUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="register_type" jdbcType="CHAR" property="registerType" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="valid" jdbcType="CHAR" property="valid" />
+  </resultMap>
+
+  <sql id="selectAppUser">
+    select id, telephone, qq, wechat, register_type, status, valid from app_user
+  </sql>
+
+  <select id="selectAppUserById" parameterType="java.lang.Integer" resultMap="AppUserResult">
+    <include refid="selectAppUser" />
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAppUserList" parameterType="AppUser" resultMap="AppUserResult">
+    <include refid="selectAppUser"/>
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="telephone != null and telephone != ''">and telephone = #{telephone}</if>
+      <if test="qq != null and qq != ''">and qq = #{qq}</if>
+      <if test="wechat != null and wechat != ''">and wechat = #{wechat}</if>
+      <if test="registerType != null and registerType != ''">and register_type = #{registerType}</if>
+      <if test="status != null and status != ''">and status = #{status}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <select id="selectAppUser" parameterType="AppUser" resultType="AppUser">
+    <include refid="selectAppUser"/>
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="telephone != null and telephone != ''">and telephone = #{telephone}</if>
+      <if test="qq != null and qq != ''">and qq = #{qq}</if>
+      <if test="wechat != null and wechat != ''">and wechat = #{wechat}</if>
+      <if test="registerType != null and registerType != ''">and register_type = #{registerType}</if>
+      <if test="status != null and status != ''">and status = #{status}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <select id="selectAppUserCounter" parameterType="AppUser" resultType="int">
+    select count(*) from app_user
+    <where>
+      <if test="id != null">and id = #{id}</if>
+      <if test="telephone != null and telephone != ''">and telephone = #{telephone}</if>
+      <if test="qq != null and qq != ''">and qq = #{qq}</if>
+      <if test="wechat != null and wechat != ''">and wechat = #{wechat}</if>
+      <if test="registerType != null and registerType != ''">and register_type = #{registerType}</if>
+      <if test="status != null and status != ''">and status = #{status}</if>
+      <if test="valid != null and valid != ''">and valid = #{valid}</if>
+    </where>
+  </select>
+
+  <delete id="deleteAppUser" parameterType="java.lang.Integer">
+    delete from app_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insertAppUser" parameterType="AppUser">
+    insert into app_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">id,</if>
+      <if test="telephone != null and telephone != ''">telephone,</if>
+      <if test="qq != null and qq != ''">qq,</if>
+      <if test="wechat != null and wechat != ''">wechat,</if>
+      <if test="registerType != null and registerType != ''">register_type,</if>
+      <if test="status != null and status !=''">status,</if>
+      <if test="valid != null and valid != ''">valid,</if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">#{id},</if>
+      <if test="telephone != null and telephone != ''">#{telephone},</if>
+      <if test="qq != null and qq != ''">#{qq},</if>
+      <if test="wechat != null and wechat != ''">#{wechat},</if>
+      <if test="registerType != null and registerType != ''">#{registerType},</if>
+      <if test="status != null and status != ''">#{status},</if>
+      <if test="valid != null and valid != ''">#{valid},</if>
+    </trim>
+  </insert>
+
+  <update id="updateAppUser" parameterType="AppUser">
+    update app_user
+    <trim prefix="SET" suffixOverrides=",">
+      <if test="telephone != null and telephone != ''">telephone = #{telephone},</if>
+      <if test="qq != null and qq != ''">qq = #{qq},</if>
+      <if test="wechat != null and wechat != ''">wechat = #{wechat},</if>
+      <if test="registerType != null and registerType != ''">register_type = #{registerType},</if>
+      <if test="status != null and status != ''">status = #{status},</if>
+      <if test="valid != null and valid != ''">valid = #{valid},</if>
+    </trim>
+    where id = #{id}
+  </update>
+</mapper>

@@ -58,9 +58,6 @@ public class AjaxResult extends HashMap<String, Object> {
     }
 
     /**
-     * 1、以下为success情况
-     */
-    /**
      *
      * @return
      */

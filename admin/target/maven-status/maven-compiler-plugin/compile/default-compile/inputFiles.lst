@@ -1,2 +1,5 @@
-D:\WeChatProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\controller\UserService\UserLogin.java
-D:\WeChatProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\PeanutVideoApplication.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\web\controller\app\AppUserController.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\web\controller\common\PINCoding.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\PeanutVideoApplication.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\web\cofig\WebMvcConfig.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\admin\src\main\java\org\peanutvideo\web\swagger2\Swagger2.java
