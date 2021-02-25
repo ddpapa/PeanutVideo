@@ -4,7 +4,7 @@ package org.peanutvideo.system.domain;
 * 用户表	app_user
 *
 * @author ddpapa
-* @date 2021/02/16
+* @date 2021/02/24
 */
 public class AppUser {
     /** 自增主键 */

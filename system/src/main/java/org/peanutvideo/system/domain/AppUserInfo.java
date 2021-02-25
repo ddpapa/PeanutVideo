@@ -16,7 +16,7 @@ public class AppUserInfo {
     private Integer userId;
 
     /** 用户头像 */
-    private String profile;
+    private String uprofile;
 
     /** 用户昵称 */
     private String nickname;
@@ -55,12 +55,12 @@ public class AppUserInfo {
         this.userId = userId;
     }
 
-    public String getProfile() {
-        return profile;
+    public String getUprofile() {
+        return uprofile;
     }
 
-    public void setProfile(String profile) {
-        this.profile = profile;
+    public void setUprofile(String uprofile) {
+        this.uprofile = uprofile;
     }
 
     public String getNickname() {
@@ -124,7 +124,7 @@ public class AppUserInfo {
         return "AppUserInfo{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", profile='" + profile + '\'' +
+                ", uprofile='" + uprofile + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", gender='" + gender + '\'' +
                 ", birthday=" + birthday +

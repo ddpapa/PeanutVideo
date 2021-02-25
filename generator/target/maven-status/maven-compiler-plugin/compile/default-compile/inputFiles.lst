@@ -1,5 +1,7 @@
 E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\AppUserInfoMapper.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\mapper\VideoMapper.java
 E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\plugin\UnmergeableXmlMappersPlugin.java
+E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\Video.java
 E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\initiator\MyBatisGeneratorInitiator.java
 E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\system\domain\AppUserPwd.java
 E:\WeChatVideoProjects\PeanutVideo-V1.0\generator\src\main\java\org\peanutvideo\config\SimpleCommentGenerator.java

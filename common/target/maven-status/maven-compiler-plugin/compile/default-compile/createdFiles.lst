@@ -1,4 +1,6 @@
 org\peanutvideo\util\StringUtils.class
 org\peanutvideo\util\AjaxResult.class
+org\peanutvideo\util\TableDataInfo.class
+org\peanutvideo\controller\BaseController.class
 org\peanutvideo\constant\HttpStatus.class
 org\peanutvideo\util\PINGenerator.class

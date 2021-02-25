@@ -6,7 +6,7 @@ import java.util.Date;
 * 用户信息表	app_user_info
 *
 * @author ddpapa
-* @date 2021/02/16
+* @date 2021/02/24
 */
 public class AppUserInfo {
     /** 自增id */
@@ -16,7 +16,7 @@ public class AppUserInfo {
     private Integer userId;
 
     /** 用户头像 */
-    private String profile;
+    private String uprofile;
 
     /** 用户昵称 */
     private String nickname;
@@ -55,12 +55,12 @@ public class AppUserInfo {
         this.userId = userId;
     }
 
-    public String getProfile() {
-        return profile;
+    public String getUprofile() {
+        return uprofile;
     }
 
-    public void setProfile(String profile) {
-        this.profile = profile == null ? null : profile.trim();
+    public void setUprofile(String uprofile) {
+        this.uprofile = uprofile;
     }
 
     public String getNickname() {

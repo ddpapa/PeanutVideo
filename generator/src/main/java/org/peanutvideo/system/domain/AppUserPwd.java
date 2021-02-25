@@ -4,7 +4,7 @@ package org.peanutvideo.system.domain;
 * 用户密码表	app_user_pwd
 *
 * @author ddpapa
-* @date 2021/02/16
+* @date 2021/02/24
 */
 public class AppUserPwd {
     /** 自增id */

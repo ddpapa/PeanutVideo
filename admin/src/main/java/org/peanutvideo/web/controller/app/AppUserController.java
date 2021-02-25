@@ -16,7 +16,6 @@ import javax.servlet.http.HttpSession;
  */
 @RestController
 @RequestMapping("/user")
-@CrossOrigin
 public class AppUserController {
     @Autowired
     HttpSession httpSession;

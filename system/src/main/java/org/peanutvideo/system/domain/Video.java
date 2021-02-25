@@ -1,5 +1,7 @@
 package org.peanutvideo.system.domain;
 
+import java.util.Date;
+
 /**
 * 视频信息表	video
 *
@@ -19,9 +21,6 @@ public class Video {
     /** 话题id（可能有多个话题） */
     private Integer topicId;
 
-    /** 评论id */
-    private Integer discussId;
-
     /** 视频简介 */
     private String description;
 
@@ -30,6 +29,9 @@ public class Video {
 
     /** 封面地址 */
     private String coverUrl;
+
+    /** 发布时间 */
+    private Date createTime;
 
     /** 视频的播放状态：0-公开 1-私密 */
     private String status;
@@ -69,14 +71,6 @@ public class Video {
         this.topicId = topicId;
     }
 
-    public Integer getDiscussId() {
-        return discussId;
-    }
-
-    public void setDiscussId(Integer discussId) {
-        this.discussId = discussId;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -99,6 +93,14 @@ public class Video {
 
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public String getStatus() {
@@ -124,10 +126,10 @@ public class Video {
                 ", userId=" + userId +
                 ", musicId=" + musicId +
                 ", topicId=" + topicId +
-                ", discussId=" + discussId +
                 ", description='" + description + '\'' +
                 ", videoUrl='" + videoUrl + '\'' +
                 ", coverUrl='" + coverUrl + '\'' +
+                ", createTime=" + createTime +
                 ", status='" + status + '\'' +
                 ", valid='" + valid + '\'' +
                 '}';
